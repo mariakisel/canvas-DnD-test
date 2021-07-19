@@ -38,6 +38,9 @@
         {id: 'defaultCircle', type: 'circle', x: 60, y: 200, r: 30, fill: "#2f34d0"}
     ];
 
+    const needImportShapes = false;
+    let importedShapes = null;
+
     window.addEventListener("keydown", onKeyDown, false);
 
     function onKeyDown(event) {        
@@ -385,12 +388,29 @@
 
         return shapes.some(el => el.id === 'defaultCircle' || el.id === 'defaultRectangle')
             ? shapes
-            : shapes.concat(defaultShapes);
+            : shapes.concat(needImportShapes ? importedShapes : defaultShapes);
     }
     
-    function createDndApp() {      
+    async function createDndApp() {
+        importedShapes = await importShapes();
         drawDndZone();     
     }
 
+    async function importShapes() {
+        const response = await fetch('shapes.json');
+        const json = await response.json();
+
+        return json.shapes;
+    }
+
+    function exportShapes() {
+        const exportLink = getElement('exportLink');
+        const shapesJson = JSON.stringify(loadShapes());
+
+        exportLink.href = URL.createObjectURL(new Blob([shapesJson]));
+        exportLink.download = 'shapes.json';
+    }
+
     window.createDndApp = createDndApp;
+    window.exportShapes = exportShapes;
 })();

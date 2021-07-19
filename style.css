@@ -19,3 +19,25 @@ body {
     position: absolute;
     z-index: 0;
 }
+
+a {
+    z-index: 2;
+    margin-top: 10px;
+    background-color: #5b5a5a;
+    color: white;
+    padding: 1em 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    }
+
+a:hover {
+    background-color: #373535;
+}
+      
+a:active {
+    background-color: black;
+}
+      
+a:visited {
+    background-color: #ccc;
+}

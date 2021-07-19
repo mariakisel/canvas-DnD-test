@@ -1,0 +1,30 @@
+{
+   "shapes": [
+        {   "id":"defaultRectangle",
+            "type":"rectangle",
+            "x":30,
+            "y":100,
+            "width":60,
+            "height":60,
+            "fill":"#228533"
+        },
+
+        {   "id":"defaultCircle",
+            "type":"circle",
+            "x":60,
+            "y":200,
+            "r":30,
+            "fill":"#2f34d0"
+        },
+
+        {
+            "id": "2c34861f-18fc-4b9b-a603-d00bbb9ce641",
+            "type": "rectangle",
+            "x": 269,
+            "y": 212,
+            "width": 60,
+            "height": 60,
+            "fill": "#228533"
+        }
+    ]
+}

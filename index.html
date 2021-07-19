@@ -9,11 +9,17 @@
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 createDndApp();
+
+                document.getElementById('exportLink').addEventListener("click", function() {
+                    exportShapes();
+                });
             });
         </script>
     </head>
     <body>
         <canvas id="backgroundCanvas"></canvas>       
         <canvas id="canvas" width="500" height="500" ></canvas>
+
+        <a id="exportLink">Export shapes</a>
     </body>
 </html>
