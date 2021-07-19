@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Canvas DnD</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script defer src="./canvas-dnd.js"></script>        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                createDndApp();
+
+                document.getElementById('exportLink').addEventListener("click", function() {
+                    exportShapes();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <canvas id="backgroundCanvas"></canvas>       
+        <canvas id="canvas" width="500" height="500" ></canvas>
+
+        <a id="exportLink">Export shapes</a>
+    </body>
+</html>
